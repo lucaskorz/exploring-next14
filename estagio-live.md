@@ -1,1 +1,2 @@
 - Criando uma rota de API (Route Handler)
+- Fazendo requisições para as API Routes no Client
