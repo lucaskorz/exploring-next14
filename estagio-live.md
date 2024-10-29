@@ -1,0 +1,1 @@
+- Criando uma rota de API (Route Handler)
