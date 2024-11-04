@@ -1,26 +1,24 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
+import { FormEvent, useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 
 interface IContactFormProps {
   contact?: {
     name: string;
     email: string;
   };
-  onSubmit?: (formData: {
-    name: string;
-    email: string;
-  }) => void;
+  onSubmit?: (formData: { name: string; email: string }) => void;
 }
 
 export function ContactForm({ contact, onSubmit }: IContactFormProps) {
-  const [name, setName] = useState(contact?.name ?? '');
-  const [email, setEmail] = useState(contact?.email ?? '');
+  const [name, setName] = useState(contact?.name ?? "");
+  const [email, setEmail] = useState(contact?.email ?? "");
 
-  function handleSubmit() {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     onSubmit?.({ name, email });
   }
 
@@ -31,7 +29,7 @@ export function ContactForm({ contact, onSubmit }: IContactFormProps) {
         <Input
           value={name}
           name="name"
-          onChange={event => setName(event.target.value)}
+          onChange={(event) => setName(event.target.value)}
         />
       </div>
 
@@ -40,13 +38,11 @@ export function ContactForm({ contact, onSubmit }: IContactFormProps) {
         <Input
           value={email}
           name="email"
-          onChange={event => setEmail(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
 
-      <Button type="submit">
-        {contact ? 'Salvar' : 'Criar'}
-      </Button>
+      <Button type="submit">{contact ? "Salvar" : "Criar"}</Button>
     </form>
   );
 }

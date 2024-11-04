@@ -1,10 +1,10 @@
-import { ContactForm } from '@/components/ContactForm';
-import { ArrowLeftIcon } from 'lucide-react';
-import Link from 'next/link';
+import { ContactForm } from "@/components/ContactForm";
+import { ArrowLeftIcon } from "lucide-react";
+import Link from "next/link";
 
 const contact = {
-  email: 'edit@jstack.com.br',
-  name: 'Editing Contact...',
+  email: "edit@jstack.com.br",
+  name: "Editing Contact...",
 };
 
 export default function CreateContactPage() {

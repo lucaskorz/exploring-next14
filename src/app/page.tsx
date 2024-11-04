@@ -1,4 +1,4 @@
-import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,27 +9,27 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Edit2Icon, PlusCircleIcon, Trash2Icon } from 'lucide-react';
-import Link from 'next/link';
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Edit2Icon, PlusCircleIcon, Trash2Icon } from "lucide-react";
+import Link from "next/link";
 
 const contacts = [
   {
     id: String(Math.random()),
-    name: 'Contact',
-    email: 'contact@jstack.com.br',
+    name: "Contact",
+    email: "contact@jstack.com.br",
   },
   {
     id: String(Math.random()),
-    name: 'Contact',
-    email: 'contact@jstack.com.br',
+    name: "Contact",
+    email: "contact@jstack.com.br",
   },
   {
     id: String(Math.random()),
-    name: 'Contact',
-    email: 'contact@jstack.com.br',
+    name: "Contact",
+    email: "contact@jstack.com.br",
   },
 ];
 
@@ -41,9 +41,7 @@ export default function Home() {
           <h1 className="font-semibold text-3xl tracking-tighter">
             MyContacts
           </h1>
-          <p className="text-muted-foreground">
-            Seus contatos em um só lugar.
-          </p>
+          <p className="text-muted-foreground">Seus contatos em um só lugar.</p>
         </div>
 
         <div className="flex items-center gap-4">
@@ -61,7 +59,7 @@ export default function Home() {
       </header>
 
       <div className="space-y-2">
-        {contacts.map(contact => (
+        {contacts.map((contact) => (
           <div
             key={contact.id}
             className="border flex items-center justify-between p-2 rounded-lg"
@@ -70,22 +68,13 @@ export default function Home() {
               <div className="size-10 bg-secondary rounded-full" />
               <div className="flex flex-col">
                 <span>{contact.name}</span>
-                <small className="text-muted-foreground">
-                  {contact.email}
-                </small>
+                <small className="text-muted-foreground">{contact.email}</small>
               </div>
             </div>
 
             <div className="flex items-center gap-2">
-              <Button
-                size="sm"
-                className="h-8"
-                variant="outline"
-                asChild
-              >
-                <Link
-                  href={`/contacts/${contact.id}/edit`}
-                >
+              <Button size="sm" className="h-8" variant="outline" asChild>
+                <Link href={`/contacts/${contact.id}/edit`}>
                   <Edit2Icon className="size-4" />
                 </Link>
               </Button>
@@ -100,7 +89,8 @@ export default function Home() {
                   <AlertDialogHeader>
                     <AlertDialogTitle>Tem certeza?</AlertDialogTitle>
                     <AlertDialogDescription>
-                      O contato será deletado permanentemente e não poderá ser recuperado.
+                      O contato será deletado permanentemente e não poderá ser
+                      recuperado.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>

@@ -1,2 +1,3 @@
 - Criando uma rota de API (Route Handler)
 - Fazendo requisições para as API Routes no Client
+- Capturando o body, headers, query params e cookies das requests
