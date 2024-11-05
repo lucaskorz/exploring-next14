@@ -6,8 +6,16 @@ import Link from "next/link";
 
 export default function CreateContactPage() {
   async function handleSubmit(data: { name: string; email: string }) {
-    const response = await fetch("/api/contacts", { method: "POST" });
+    const response = await fetch("/api/contacts?id=teste", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
     const body = await response.json();
+
     console.log(body);
   }
 
